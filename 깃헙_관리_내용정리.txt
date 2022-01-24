@@ -1,0 +1,65 @@
+git config --global user.name "euncheol_97"
+git config --global user.email "1997c0703@gmail.com"
+
+git config --list   //제대로 변경이 되었는지 확인	
+//내가 git init 을 하려는 폴더 (깃허브와 연동할려고) 의 위치로 간 후,
+git init // 하면 숨김파일로 .git 파일이 만들어진다.
+
+//이후에 파일을 수정을 시키고(연습이니까 일부러)
+git add .
+git commit -m "initail commit 등 기록하고 싶은 말" 
+----------------------------------------------------------------------------------
+//깃허브의 (리모트)원격 저장소와 내 로컬을 연동시키고 싶으면?
+//먼저 깃허브의 레포지토리를 하나 만들자. 그 레포지토리 주소가 중요하다.
+git remote add origin https://github.com/euncheolChoi/TIL.git //이런식이다, 이것을 cmd에 입력
+git remote add origin  //여기까지가 add가 되는부분까지.
+
+//이제 서버(깃허브)와 연동하고 싶으면,
+git push origin master
+//예를들어 폴더가 내 로컬에서 실수로 삭제되면, 깃허브에 올려놓았을 경우에는
+git clone <해당 레파지토리 주소>
+
+//특정 시점으로 돌아가고 싶을 때
+git reset --hard <git log 명령어 입력했을때 뜨는 해시값(?)>
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+//유용했던 티스토리 블로그 : https://ebbnflow.tistory.com/198
+//정리
+//<주의@> : git push 할때 연동된 폴더가 깃헙에 올라가지 않으면 폴더 안에 아무 파일이 없는지 체크하자.
+// 폴더 안에 파일이 있어야지 깃헙에 푸시가 된다
+//결론적으로 로컬에 있는 자료를 깃헙에 올리려면 다음과 같이 하면 된다. 
+// 항상 push하려고 할때  failed to push some refs to 'https://github.com/euncheolChoi/TIL.git 이런 오류가 뜨는 것 같다
+//그 이유는 로컬 저장소와 원격 저장소의 상태가 다르기 때문에 파일 손실을 막기 위해서라고 한다.
+// 따라서 항상 먼저 
+
+//연동할 깃허브의 레파지토리 만들기(깃허브 웹사이트에서), 그리고 나서 주소 copy
+//현 폴더와 연결된 레파지토리를 확인하자, 깃허브에 올리고싶은 폴더로 가서, 
+git remote 
+
+//아까 확인한 깃허브의 내 저장소의 주소를 이용해 원격저장소를 생성하는 하는 명령어
+git remote add <원격저장소이름 : https://github.com/유저네임/레파지토리네임.git>
+
+//원격저장소 생성 후, 연결(원격 저장소에 로컬 저장소 내용 그대로 집어넣기.)
+git push -u origin master
+
+이때  Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes 이런 오류가 발생한다면 임시방편으로 
++를 붙여서 git push -u origin +master 를 사용해서 해결해볼 수 있다.
+
+// 이 블로그 하나면 다 해결된다!! 
+https://gygyna.tistory.com/213
+
+===================================================
+
+마지막으로 기록하자면 결국 .git 이 생성된 로컬 폴더가 그대로 원격 repo에 박제된다.
+로컬 폴더 아래의 폴더구조도!! 근데 이게 잘 안되었던거다. 된것을 확인함// 21-01-01
+
+원격 레포와 새로 연결하는 경우, 위에서처럼 git init ==> git remote add <원격저장소이름> 
+git add . ( 커밋할 준비)  ==> git commit -m "initail commt 등" ==> git push origin master : 이게 안될수가 
+있다. 이유는 원격레포에 변화가 있어서 로컬저장소와 상태가 같지 않을 때에 발생하는 문제.
+원래는 git pull 방법을 쓰는게 맞다 // 근데 이것도 잘 안되다보니까 강제로 push 하는 -u옵션 사용
+==> git push -f origin master ==> 이렇게 하니 파일이 올라갔는데 , 그 파일을 담고있는 폴더구조는 
+반영되지 않았다. 그래서 멘붕왔다가 일단 파일의 이름을 하나 수정한 뒤 git add . 하고 다시 
+git push origin master 했더니 폴더구조까지 반영되어 push되었다. 이유는 모르겠다 ㅋㅋㅋ
+ 
+
