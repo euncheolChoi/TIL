@@ -12,6 +12,9 @@
   - https://losskatsu.github.io/it-infra/docker03/#2-%EB%B3%80%EA%B2%BD%EB%90%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
   - 도커도 깃허브처럼 이미지를 push하는게 있는데 이건 나중에 다시 알아보자..
 
+- 새로 저장한 도커 이미지 이름 : ros_docker
+  - docker run -it ros_docker:18.04 /bin/bash 사용하여 컨테이너로 들어간다.
+
 #### 삽질기록
 ![Screenshot from 2022-03-29 09-30-38](https://user-images.githubusercontent.com/86426437/161102733-3e346259-023d-45d6-bd08-7e30a33a6f5e.png)
 ![Screenshot from 2022-04-01 00-34-22](https://user-images.githubusercontent.com/86426437/161102747-5303d70d-e3ab-46b1-b81a-c749dfecdf97.png)
