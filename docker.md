@@ -16,10 +16,10 @@
   - docker run -it ros_docker:18.04 /bin/bash 사용하여 컨테이너로 들어간다.
   
 - docker를 처음 설치하면 기본적으로 rviz, gazebo등의 시각화 도구를 사용할 수 없다. 
-- rviz등을 입력했을때 QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root' qt.qpa.screen: QXcbConnection: Could not connect to display  대강 이런 오류가 뜨면 도커에서 하드웨어 가속을 사용할 수 있도록 설정을 해 줘야 한다고 한다. 
-- https://wooono.tistory.com/123 참고 블로그
-- http://wiki.ros.org/action/login/docker/Tutorials/Hardware%20Acceleration#nvidia-docker2  공식 레퍼런스 
-==> 아직 미해결
+  - rviz등을 입력했을때 QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root' qt.qpa.screen: QXcbConnection: Could not connect to display  대강 이런 오류가 뜨면 도커에서 하드웨어 가속을 사용할 수 있도록 설정을 해 줘야 한다고 한다. 
+  - https://wooono.tistory.com/123 참고 블로그
+  - http://wiki.ros.org/action/login/docker/Tutorials/Hardware%20Acceleration#nvidia-docker2  공식 레퍼런스 
+  - -> 아직 미해결
 
 
 
