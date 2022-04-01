@@ -1,5 +1,5 @@
 
-## docker의 컨테이너에 우분투 18.04이미지를 다운받고 ros-melodic 및 실습 패키지까지 다운받았던 과정
+## docker의 컨테이너에 우분투 18.04이미지를 다운받고 ros-melodic 실습 패키지 빌드
 - 나의 경우 로컬호스트는 우분투 20.04였음. 
 
 1) 도커 설치 및 기본 명령어들 https://www.notion.so/2-Docker-47d55c78e4ca49e780ce8051818bbea1  https://blog.naver.com/padamu1/222140838918
